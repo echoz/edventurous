@@ -26,7 +26,11 @@
 	<string>1</string>
 	<key>NSMainNibFile</key>
 	<string>MainMenu</string>
+	<key>NSHumanReadableCopyright</key>
+	<string>Copyright © 2009 ORNYX</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
+	<key>CFBundleGetInfoString</key>
+	<string>The Nice OS X Player for NTU Video Lectures</string>
 </dict>
 </plist>

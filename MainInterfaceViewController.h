@@ -34,6 +34,7 @@
 
 -(void)doneWithSheet:(NSWindow *)sheet withSender:(id)sender;
 -(void)resizeMovieByx:(float)magnitude;
+-(NSSize)getMovieNaturalSize:(QTMovie *)qtMovie withOriginal:(NSSize)original;
 
 @property (nonatomic, retain) IBOutlet QTMovieView *movie;
 @property (nonatomic, retain) IBOutlet NSTextField *progressLabel;

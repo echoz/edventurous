@@ -56,7 +56,8 @@
 }
 
 -(void)resizeMovieByx:(float)magnitude {
-	CGFloat extraHeight = (window.frame.size.height-movie.frame.size.height) + 16.0;	
+	CGFloat extraHeight = (window.frame.size.height-movie.frame.size.height) + 16.0;
+	originalSize = [self getMovieNaturalSize:[movie movie] withOriginal:originalSize];	
 	
 	if (magnitude == 0.0) {
 		[window setFrame:NSMakeRect(window.frame.origin.x, window.frame.origin.y, originalSize.width, originalSize.height + extraHeight) display:YES animate:YES];		
@@ -91,6 +92,21 @@
 	}
 }
 
+-(NSSize)getMovieNaturalSize:(QTMovie *)qtMovie withOriginal:(NSSize)original {
+	NSSize finalSize = original;
+	NSSize testNaturalSize = [[[qtMovie movieAttributes] valueForKey:QTMovieNaturalSizeAttribute] sizeValue];
+	NSSize testCurrentSize = [[[qtMovie movieAttributes] valueForKey:QTMovieCurrentSizeAttribute] sizeValue];		
+	
+	if ((testCurrentSize.height != 0) && (testCurrentSize.width != 0)) {
+		finalSize = testCurrentSize;
+	}		
+	
+	if ((testNaturalSize.height != 0) && (testNaturalSize.width != 0)) {
+		finalSize = testNaturalSize;
+	}
+	return finalSize;
+}
+
 - (void)webView:(WebView *)sender didFinishLoadForFrame:(WebFrame *)frame {
 	NSString *doc = [[NSString alloc] initWithData:[[frame dataSource] data] encoding:NSASCIIStringEncoding];
 	NSRange test = [doc rangeOfString:CLASSID_TOHUNTFOR];	
@@ -116,20 +132,12 @@
 		NSLog(@"Video URL is %@", videoURL);
 		
 		QTMovie *video = [QTMovie movieWithURL:[NSURL URLWithString:videoURL] error:nil];
-		NSSize testNaturalSize = [[[video movieAttributes] valueForKey:QTMovieNaturalSizeAttribute] sizeValue];
-		NSSize testCurrentSize = [[[video movieAttributes] valueForKey:QTMovieCurrentSizeAttribute] sizeValue];		
-
-		if ((testCurrentSize.height != 0) && (testCurrentSize.width != 0)) {
-			originalSize = testCurrentSize;
-		}		
-		
-		if ((testNaturalSize.height != 0) && (testNaturalSize.width != 0)) {
-			originalSize = testNaturalSize;
-		}
 
 		NSLog(@"natural size is w:%f, h:%f", originalSize.width, originalSize.height);
 		
 		[movie setMovie:video];
+		
+		originalSize = [self getMovieNaturalSize:video withOriginal:originalSize];
 		
 		[progressIndicator stopAnimation:sender];
 		[self doneWithSheet:progressWindow withSender:sender];
