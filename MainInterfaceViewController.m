@@ -43,6 +43,24 @@
 	[self doneWithSheet:urlInputView withSender:sender];
 }
 
+-(IBAction) resize2x:(id)sender {
+	[self resizeMovieByx:2];
+}
+-(IBAction) resizeOriginal:(id)sender {
+	[self resizeMovieByx:0];
+}
+
+-(void)resizeMovieByx:(int)magnitude {
+	CGFloat extraHeight = (window.frame.size.height-movie.frame.size.height) + 17;
+	
+	if (magnitude == 0) {
+		[window setFrame:NSMakeRect(window.frame.origin.x, window.frame.origin.y, originalSize.width, originalSize.height + extraHeight) display:YES animate:YES];		
+	} else {
+		[window setFrame:NSMakeRect(window.frame.origin.x, window.frame.origin.y, originalSize.width*magnitude, (originalSize.height*magnitude)+ extraHeight) display:YES animate:YES];
+	}
+	NSLog(@"Resizing to %f, %f",window.frame.size.width, window.frame.size.height);	
+}
+
 -(void)doneWithSheet:(NSWindow *)sheet withSender:(id)sender {
 	[[NSApplication sharedApplication] endSheet:sheet];
 	[sheet orderOut:sender];		
@@ -92,7 +110,14 @@
 			
 		NSLog(@"Video URL is %@", videoURL);
 		
-		[movie setMovie:[QTMovie movieWithURL:[NSURL URLWithString:videoURL] error:nil]];
+		QTMovie *video = [QTMovie movieWithURL:[NSURL URLWithString:videoURL] error:nil];
+		
+		originalSize = [[[video movieAttributes] valueForKey:@"QTMovieCurrentSizeAttribute"] sizeValue];
+		
+		[self resizeMovieByx:0];
+		
+		[movie setMovie:video];
+		
 		[progressIndicator stopAnimation:sender];
 		[self doneWithSheet:progressWindow withSender:sender];
 		

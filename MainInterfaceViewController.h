@@ -22,15 +22,17 @@
 	IBOutlet NSTextField *progressLabel;
 	IBOutlet NSProgressIndicator *progressIndicator;
 	IBOutlet NSWindow *progressWindow;
-	NSWindow *window;
+	IBOutlet NSWindow *window;
 	IBOutlet QTMovieView *movie;
+	NSSize originalSize;
 }
 
 @property (nonatomic) WebView *webv;
 @property (nonatomic, retain) SignatureEngine * sigEngine;
-@property (nonatomic, retain) NSWindow *window;
+@property (nonatomic, retain) IBOutlet NSWindow *window;
 
 -(void)doneWithSheet:(NSWindow *)sheet withSender:(id)sender;
+-(void)resizeMovieByx:(int)magnitude;
 
 @property (nonatomic, retain) IBOutlet QTMovieView *movie;
 @property (nonatomic, retain) IBOutlet NSTextField *progressLabel;
@@ -42,5 +44,7 @@
 -(IBAction) finishedInput:(id)sender;
 -(IBAction) showURLInputView:(id)sender;
 -(IBAction) closeInput:(id)sender;
--(IBAction)cancelProcessing:(id)sender;
+-(IBAction) cancelProcessing:(id)sender;
+-(IBAction) resize2x:(id)sender;
+-(IBAction) resizeOriginal:(id)sender;
 @end
