@@ -30,6 +30,7 @@
 @property (nonatomic) WebView *webv;
 @property (nonatomic, retain) SignatureEngine * sigEngine;
 @property (nonatomic, retain) IBOutlet NSWindow *window;
+@property (nonatomic, assign) NSSize originalSize;
 
 -(void)doneWithSheet:(NSWindow *)sheet withSender:(id)sender;
 -(void)resizeMovieByx:(float)magnitude;

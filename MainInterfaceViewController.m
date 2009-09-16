@@ -11,7 +11,7 @@
 
 @implementation MainInterfaceViewController
 @synthesize webv, sigEngine;
-@synthesize urlInput, urlInputView, window, titleLabel, progressLabel, progressWindow, progressIndicator, movie;
+@synthesize urlInput, urlInputView, window, titleLabel, progressLabel, progressWindow, progressIndicator, movie, originalSize;
 
 #define WEBVIEW_USERAGENT @"Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_5_8; fi-fi) AppleWebKit/531.9 (KHTML, like Gecko) Version/4.0.3 Safari/531.9"
 #define CLASSID_TOHUNTFOR @"classid=\"CLSID:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B\""
@@ -56,14 +56,14 @@
 }
 
 -(void)resizeMovieByx:(float)magnitude {
-	CGFloat extraHeight = (window.frame.size.height-movie.frame.size.height)+16.0;
+	CGFloat extraHeight = (window.frame.size.height-movie.frame.size.height) + 16.0;	
 	
-	if (magnitude == 0) {
+	if (magnitude == 0.0) {
 		[window setFrame:NSMakeRect(window.frame.origin.x, window.frame.origin.y, originalSize.width, originalSize.height + extraHeight) display:YES animate:YES];		
 	} else {
-		[window setFrame:NSMakeRect(window.frame.origin.x, window.frame.origin.y, originalSize.width*magnitude, (originalSize.height*magnitude)+ extraHeight) display:YES animate:YES];
+		[window setFrame:NSMakeRect(window.frame.origin.x, window.frame.origin.y, originalSize.width * magnitude, (originalSize.height*magnitude)+ extraHeight) display:YES animate:YES];
 	}
-	NSLog(@"Resizing to %f, %f",window.frame.size.width, window.frame.size.height);	
+	NSLog(@"Resizing to w:%f, h:%f",window.frame.size.width, window.frame.size.height);	
 }
 
 -(void)doneWithSheet:(NSWindow *)sheet withSender:(id)sender {
@@ -116,16 +116,26 @@
 		NSLog(@"Video URL is %@", videoURL);
 		
 		QTMovie *video = [QTMovie movieWithURL:[NSURL URLWithString:videoURL] error:nil];
+		NSSize testNaturalSize = [[[video movieAttributes] valueForKey:QTMovieNaturalSizeAttribute] sizeValue];
+		NSSize testCurrentSize = [[[video movieAttributes] valueForKey:QTMovieCurrentSizeAttribute] sizeValue];		
+
+		if ((testCurrentSize.height != 0) && (testCurrentSize.width != 0)) {
+			originalSize = testCurrentSize;
+		}		
+		
+		if ((testNaturalSize.height != 0) && (testNaturalSize.width != 0)) {
+			originalSize = testNaturalSize;
+		}
+
+		NSLog(@"natural size is w:%f, h:%f", originalSize.width, originalSize.height);
 		
 		[movie setMovie:video];
 		
-		originalSize = [[[video movieAttributes] valueForKey:@"QTMovieCurrentSizeAttribute"] sizeValue];
-		
-		[self resizeMovieByx:0];
-		
 		[progressIndicator stopAnimation:sender];
 		[self doneWithSheet:progressWindow withSender:sender];
-		
+
+		[self resizeMovieByx:0];
+				
 	} else {
 		NSLog(@"done loading frame for %@", [sender mainFrameURL]);
 		if ([[sender mainFrameURL] rangeOfString:@"defaultmac.asp"].location != NSNotFound) {
