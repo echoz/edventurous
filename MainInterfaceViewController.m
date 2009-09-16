@@ -24,7 +24,7 @@
 	//	[webv setShouldUpdateWhileOffscreen:NO];
 	sigEngine = [SignatureEngine sharedSignatureEngine];
 	gotPage = NO;
-		
+	originalSize = NSMakeSize(movie.frame.size.width, movie.frame.size.height);
 }
 
 -(IBAction)finishedInput:(id)sender {
@@ -46,12 +46,17 @@
 -(IBAction) resize2x:(id)sender {
 	[self resizeMovieByx:2];
 }
+
+-(IBAction) resize1point5x:(id)sender {
+	[self resizeMovieByx:1.5];
+}
+
 -(IBAction) resizeOriginal:(id)sender {
 	[self resizeMovieByx:0];
 }
 
--(void)resizeMovieByx:(int)magnitude {
-	CGFloat extraHeight = (window.frame.size.height-movie.frame.size.height) + 17;
+-(void)resizeMovieByx:(float)magnitude {
+	CGFloat extraHeight = (window.frame.size.height-movie.frame.size.height)+16.0;
 	
 	if (magnitude == 0) {
 		[window setFrame:NSMakeRect(window.frame.origin.x, window.frame.origin.y, originalSize.width, originalSize.height + extraHeight) display:YES animate:YES];		
@@ -112,11 +117,11 @@
 		
 		QTMovie *video = [QTMovie movieWithURL:[NSURL URLWithString:videoURL] error:nil];
 		
+		[movie setMovie:video];
+		
 		originalSize = [[[video movieAttributes] valueForKey:@"QTMovieCurrentSizeAttribute"] sizeValue];
 		
 		[self resizeMovieByx:0];
-		
-		[movie setMovie:video];
 		
 		[progressIndicator stopAnimation:sender];
 		[self doneWithSheet:progressWindow withSender:sender];

@@ -32,7 +32,7 @@
 @property (nonatomic, retain) IBOutlet NSWindow *window;
 
 -(void)doneWithSheet:(NSWindow *)sheet withSender:(id)sender;
--(void)resizeMovieByx:(int)magnitude;
+-(void)resizeMovieByx:(float)magnitude;
 
 @property (nonatomic, retain) IBOutlet QTMovieView *movie;
 @property (nonatomic, retain) IBOutlet NSTextField *progressLabel;
@@ -46,5 +46,6 @@
 -(IBAction) closeInput:(id)sender;
 -(IBAction) cancelProcessing:(id)sender;
 -(IBAction) resize2x:(id)sender;
+-(IBAction) resize1point5x:(id)sender;
 -(IBAction) resizeOriginal:(id)sender;
 @end
