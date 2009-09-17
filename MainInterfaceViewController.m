@@ -28,14 +28,26 @@
 }
 
 -(IBAction)finishedInput:(id)sender {
-	if (![[urlInput stringValue] hasPrefix:@"http://"]) {
-		[urlInput setStringValue:[@"http://" stringByAppendingString:[urlInput stringValue]]];
+	static NSString *httpval = @"\\b(https?)://(?:(\\S+?)(?::(\\S+?))?@)?([a-zA-Z0-9\\-.]+)(?::(\\d+))?((?:/[a-zA-Z0-9\\-._?,'+\\&%$=~*!():@\\\\]*)+)?";
+
+	if ([[urlInput stringValue] rangeOfRegex:httpval].location == NSNotFound) {
+		[urlInput selectText:sender];
+	} else {
+		if (![[urlInput stringValue] hasPrefix:@"http://"]) {
+			[urlInput setStringValue:[@"http://" stringByAppendingString:[urlInput stringValue]]];
+		}
+		
+		if ([[urlInput stringValue] hasPrefix:@"http://presentur.ntu.edu.sg"]) {
+			[webv setMainFrameURL:[urlInput stringValue]];
+			[self closeInput:sender];
+			[[NSApplication sharedApplication] beginSheet:progressWindow modalForWindow:window modalDelegate:nil didEndSelector:nil contextInfo:nil];
+			[progressIndicator startAnimation:sender];					
+		} else {
+			[urlInput selectText:sender];
+		}
+		
 	}
 	
-	[webv setMainFrameURL:[urlInput stringValue]];
-	[self closeInput:sender];
-	[[NSApplication sharedApplication] beginSheet:progressWindow modalForWindow:window modalDelegate:nil didEndSelector:nil contextInfo:nil];
-	[progressIndicator startAnimation:sender];
 }
 
 
@@ -87,7 +99,7 @@
 
 - (void)webView:(WebView *)sender didStartProvisionalLoadForFrame:(WebFrame *)frame {
 	if (!gotPage) {
-		[progressLabel setStringValue:[@"Processing " stringByAppendingString:[sender mainFrameURL]]];
+		[progressLabel setStringValue:[@"Starting load of " stringByAppendingString:[sender mainFrameURL]]];
 		NSLog(@"Starting load of %@",[sender mainFrameURL]);			
 	}
 }
@@ -115,7 +127,8 @@
 //	static NSString * qtpLink = @"http://www.apple.com/quicktime";
 //	static NSString * f4mLink = @"http://www.microsoft.com/windows/windowsmedia/player/flip4mac.mspx";
 	NSString *videoURL;
-	
+
+	[progressLabel setStringValue:[@"Done load of " stringByAppendingString:[sender mainFrameURL]]];
 	NSLog(@"%@",doc);
 	
 	if (test.location != NSNotFound) {
@@ -128,7 +141,8 @@
 		}
 		
 		videoURL = [videoURL stringByAppendingFormat:@"play.asx"];
-			
+		
+		[progressLabel setStringValue:[@"Video URL is " stringByAppendingString:videoURL]];			
 		NSLog(@"Video URL is %@", videoURL);
 		
 		QTMovie *video = [QTMovie movieWithURL:[NSURL URLWithString:videoURL] error:nil];
