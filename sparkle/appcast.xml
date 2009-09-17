@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle"  xmlns:dc="http://purl.org/dc/elements/1.1/">
+   <channel>
+      <title>edventurous Changelog</title>
+      <link>http://echoz.github.com/edventurous/appcast.xml</link>
+      <description>Most recent changes with links to updates.</description>
+      <language>en</language>
+         <item>
+            <title>Version 1.0</title>
+ 			<sparkle:minimumSystemVersion>10.5.5</sparkle:minimumSystemVersion>
+						<sparkle:releaseNotesLink>
+							http://echoz.github.com/edventurous/sparkle/release.html
+						</sparkle:releaseNotesLink>
+            <pubDate>Thu, 17 Sep 2009 21:53:11 +0800</pubDate>
+            <enclosure url="http://www3.ntu.edu.sg/home2008/jere0012/edventurous-1.0.5.zip" sparkle:version="5" sparkle:shortVersionString="1.0.5" length="517709" type="application/octet-stream" sparkle:dsaSignature="MC0CFExZYlvIVW5gbRcVVRNy9qv1BEtOAhUAnvRsnpoXWTSNYFXRuXmioGI/btk=" />
+         </item>
+        </item>
+   </channel>
+</rss>
