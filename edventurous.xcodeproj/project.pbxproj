@@ -24,6 +24,7 @@
 		3F95AB07105AC1A9003FFD19 /* glyph-play.tif in Resources */ = {isa = PBXBuildFile; fileRef = 3F95AB06105AC1A9003FFD19 /* glyph-play.tif */; };
 		3F95AB11105AC26C003FFD19 /* glyph-playfull.tif in Resources */ = {isa = PBXBuildFile; fileRef = 3F95AB10105AC26C003FFD19 /* glyph-playfull.tif */; };
 		3F97F6EF10595F4600E1A6D4 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F97F6EE10595F4600E1A6D4 /* WebKit.framework */; };
+		3FB55B79106384090061A170 /* EFVideoLecture.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FB55B78106384090061A170 /* EFVideoLecture.m */; };
 		3FC49FF21059861C007D85B0 /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FC49FF11059861C007D85B0 /* RegexKitLite.m */; };
 		3FD12F5A1059986F006ACC75 /* QTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FD12F591059986F006ACC75 /* QTKit.framework */; };
 		3FD91DD71059875D00445FC7 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FD91DD61059875D00445FC7 /* libicucore.dylib */; };
@@ -73,6 +74,8 @@
 		3F95AB06105AC1A9003FFD19 /* glyph-play.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "glyph-play.tif"; sourceTree = "<group>"; };
 		3F95AB10105AC26C003FFD19 /* glyph-playfull.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "glyph-playfull.tif"; sourceTree = "<group>"; };
 		3F97F6EE10595F4600E1A6D4 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = /System/Library/Frameworks/WebKit.framework; sourceTree = "<absolute>"; };
+		3FB55B77106384090061A170 /* EFVideoLecture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EFVideoLecture.h; sourceTree = "<group>"; };
+		3FB55B78106384090061A170 /* EFVideoLecture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EFVideoLecture.m; sourceTree = "<group>"; };
 		3FC49FF01059861C007D85B0 /* RegexKitLite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegexKitLite.h; sourceTree = "<group>"; };
 		3FC49FF11059861C007D85B0 /* RegexKitLite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegexKitLite.m; sourceTree = "<group>"; };
 		3FD12F591059986F006ACC75 /* QTKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QTKit.framework; path = /System/Library/Frameworks/QTKit.framework; sourceTree = "<absolute>"; };
@@ -139,6 +142,7 @@
 		29B97314FDCFA39411CA2CEA /* edventurous */ = {
 			isa = PBXGroup;
 			children = (
+				3FB55B7510637EE90061A170 /* EdventurousFramework */,
 				3F95A69C1059EFA3003FFD19 /* SignatureEngine */,
 				3F3385DC1059C09600CF55B4 /* Images */,
 				3FC49FEE105985F9007D85B0 /* RegexKitLite */,
@@ -207,6 +211,15 @@
 				3F95A6A31059F01A003FFD19 /* SignatureEngine.xcdatamodel */,
 			);
 			path = SignatureEngine;
+			sourceTree = "<group>";
+		};
+		3FB55B7510637EE90061A170 /* EdventurousFramework */ = {
+			isa = PBXGroup;
+			children = (
+				3FB55B77106384090061A170 /* EFVideoLecture.h */,
+				3FB55B78106384090061A170 /* EFVideoLecture.m */,
+			);
+			path = EdventurousFramework;
 			sourceTree = "<group>";
 		};
 		3FC49FEE105985F9007D85B0 /* RegexKitLite */ = {
@@ -305,6 +318,7 @@
 				3F95A6A21059EFEC003FFD19 /* Signature.m in Sources */,
 				3F95A6A41059F01A003FFD19 /* SignatureEngine.xcdatamodel in Sources */,
 				3F95A7A8105A815E003FFD19 /* MainInterfaceViewController.m in Sources */,
+				3FB55B79106384090061A170 /* EFVideoLecture.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
