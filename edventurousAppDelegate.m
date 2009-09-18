@@ -7,6 +7,7 @@
 //
 
 #import "edventurousAppDelegate.h"
+#import <QTKit/QTKit.h>
 
 @implementation edventurousAppDelegate
 @synthesize window, mainInterface;
@@ -22,10 +23,10 @@
 	
 	[[NSApplication sharedApplication] setDelegate:self];
 	[[NSApplication sharedApplication] setNextResponder:mainInterface];
+	
 }
 
 - (BOOL) applicationShouldTerminateAfterLastWindowClosed: (NSApplication *) theApplication {
 	return YES;
 }
-
 @end

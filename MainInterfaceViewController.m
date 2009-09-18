@@ -10,7 +10,7 @@
 
 
 @implementation MainInterfaceViewController
-@synthesize webv, sigEngine;
+@synthesize webv, sigEngine, downloadButton;
 @synthesize urlInput, urlInputView, window, titleLabel, progressLabel, progressWindow, progressIndicator, movie, originalSize;
 
 #define WEBVIEW_USERAGENT @"Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_5_8; fi-fi) AppleWebKit/531.9 (KHTML, like Gecko) Version/4.0.3 Safari/531.9"
@@ -25,6 +25,9 @@
 	sigEngine = [SignatureEngine sharedSignatureEngine];
 	gotPage = NO;
 	originalSize = NSMakeSize(movie.frame.size.width, movie.frame.size.height);
+	[downloadButton setEnabled:NO];
+	
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(movieLoadStateChanged:) name:QTMovieLoadStateDidChangeNotification object:nil];
 }
 
 -(IBAction)finishedInput:(id)sender {
@@ -50,6 +53,46 @@
 	
 }
 
+-(void)movieLoadStateChanged:(id)sender {
+	NSLog(@"%li %li", [[[movie.movie movieAttributes] valueForKey:QTMovieLoadStateAttribute] longValue], QTMovieLoadStateLoaded);
+	
+	if (([[movie.movie attributeForKey:QTMovieLoadStateAttribute] longValue] != QTMovieLoadStateLoading) || ([[movie.movie attributeForKey:QTMovieLoadStateAttribute] longValue] != QTMovieLoadStateError)) {
+		NSLog(@"Setting original size");
+		originalSize = [self getMovieNaturalSize:movie.movie withOriginal:originalSize];
+		[self resizeMovieByx:0];
+	}
+	
+	if ([[movie.movie attributeForKey:QTMovieLoadStateAttribute] longValue] == QTMovieLoadStateComplete) {
+		NSLog(@"Done loading movie");
+		[downloadButton setEnabled:YES];
+	} else {
+		NSLog(@"Loading movie");
+		[downloadButton setEnabled:NO];
+	}
+}
+
+-(IBAction) downloadMovie:(id)sender {
+	if ([[movie.movie attributeForKey:QTMovieLoadStateAttribute] longValue] == QTMovieLoadStateComplete) {
+		NSSavePanel *sp;
+		int runResult;
+		
+		/* create or get the shared instance of NSSavePanel */
+		sp = [NSSavePanel savePanel];
+		
+		/* set up new attributes */
+		[sp setRequiredFileType:@"mov"];
+		
+		/* display the NSSavePanel */
+		runResult = [sp runModalForDirectory:NSHomeDirectory() file:@""];
+		
+		/* if successful, save file under designated name */
+		if (runResult == NSOKButton) {
+			if (![movie.movie writeToFile:[sp filename] withAttributes:[NSDictionary dictionaryWithObject:[NSNumber numberWithBool:YES] forKey:QTMovieFlatten]])
+				NSBeep();
+		}
+	}
+	
+}
 
 -(IBAction)closeInput:(id)sender {
 	[self doneWithSheet:urlInputView withSender:sender];
@@ -106,8 +149,10 @@
 
 -(NSSize)getMovieNaturalSize:(QTMovie *)qtMovie withOriginal:(NSSize)original {
 	NSSize finalSize = original;
-	NSSize testNaturalSize = [[[qtMovie movieAttributes] valueForKey:QTMovieNaturalSizeAttribute] sizeValue];
-	NSSize testCurrentSize = [[[qtMovie movieAttributes] valueForKey:QTMovieCurrentSizeAttribute] sizeValue];		
+	NSSize testNaturalSize = [[qtMovie attributeForKey:QTMovieNaturalSizeAttribute] sizeValue];
+	NSSize testCurrentSize = [[qtMovie attributeForKey:QTMovieCurrentSizeAttribute] sizeValue];		
+	
+	NSLog(@"Getting original size");
 	
 	if ((testCurrentSize.height != 0) && (testCurrentSize.width != 0)) {
 		finalSize = testCurrentSize;
@@ -146,17 +191,11 @@
 		NSLog(@"Video URL is %@", videoURL);
 		
 		QTMovie *video = [QTMovie movieWithURL:[NSURL URLWithString:videoURL] error:nil];
-
-		NSLog(@"natural size is w:%f, h:%f", originalSize.width, originalSize.height);
 		
 		[movie setMovie:video];
 		
-		originalSize = [self getMovieNaturalSize:video withOriginal:originalSize];
-		
 		[progressIndicator stopAnimation:sender];
 		[self doneWithSheet:progressWindow withSender:sender];
-
-		[self resizeMovieByx:0];
 				
 	} else {
 		NSLog(@"done loading frame for %@", [sender mainFrameURL]);

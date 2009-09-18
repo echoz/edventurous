@@ -24,6 +24,7 @@
 	IBOutlet NSWindow *progressWindow;
 	IBOutlet NSWindow *window;
 	IBOutlet QTMovieView *movie;
+	IBOutlet NSButton *downloadButton;
 	NSSize originalSize;
 }
 
@@ -43,6 +44,7 @@
 @property (nonatomic, retain) IBOutlet NSTextField *urlInput;
 @property (nonatomic, retain) IBOutlet NSWindow *urlInputView;
 @property (nonatomic, retain) IBOutlet NSTextField *titleLabel;
+@property (nonatomic, retain) IBOutlet NSButton *downloadButton;
 -(IBAction) finishedInput:(id)sender;
 -(IBAction) showURLInputView:(id)sender;
 -(IBAction) closeInput:(id)sender;
@@ -50,4 +52,6 @@
 -(IBAction) resize2x:(id)sender;
 -(IBAction) resize1point5x:(id)sender;
 -(IBAction) resizeOriginal:(id)sender;
+-(IBAction) downloadMovie:(id)sender;
+-(void)movieLoadStateChanged:(id)sender;
 @end
