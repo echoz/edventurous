@@ -49,7 +49,7 @@
 -(void)gotMetadata:(NSNotification *)notification {
 	static NSString * parseRegex = @"<tr><td width=\"[0-9]+%\" class=\"[a-zA-Z0-9]+\"><b>Title</b>:</td><td class=\"[a-zA-Z0-9]+\">(.*)</td><td valign=\"[a-zA-Z]+\" align=\"[a-zA-Z]+\" width=\"[0-9]+\" rowspan=\"[0-9]+\"><img src=\".*\" width=\"[0-9]+\" height=\"[0-9]+\" border=\"[0-9]+\"></td></tr><tr><td class=\"[0-9a-zA-Z]+\"><b>Description</b>:</td><td class=\"[0-9a-zA-Z]+\">(.*)</td></tr><tr><td class=\"[0-9a-zA-Z]+\"><b>Author</b>:</td><td class=\"[0-9a-zA-Z]+\">(.*)</td></tr><tr><td class=\"[0-9a-zA-Z]+\"><b>Email</b>:</td><td class=\"[0-9a-zA-Z]+\">(.*)</td></tr><tr><td class=\"[0-9a-zA-Z]+\"><b>Mp3</b>:</td><td class=\"[0-9a-zA-Z]+\">(Yes|No)</td></tr><tr><td class=\"[0-9a-zA-Z]+\"><b>Mp4</b>:</td><td class=\"[0-9a-zA-Z]+\">(Yes|No)</td></tr><tr><td class=\"[0-9a-zA-Z]+\"><b>Creation Date</b>:</td><td class=\"[0-9a-zA-Z]+\">([0-9/]+)</td></tr>";
 	if ([notification name] == EFGrabURLFinishedNotification) {
-		NSString * doc = [notification object];
+		NSString * doc = [[NSString alloc] initWithData:[notification object] encoding:NSASCIIStringEncoding];
 		doc = [[doc stringByReplacingOccurrencesOfString:@"\n" withString:@""] stringByReplacingOccurrencesOfRegex:@"\t" withString:@""];
 		NSArray * captures = [doc componentsMatchedByRegex:parseRegex];
 		
