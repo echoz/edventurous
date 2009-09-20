@@ -10,6 +10,7 @@
 #import <WebKit/WebKit.h>
 #import <QTKit/QTKit.h>
 #import "RegexKitLite.h"
+#import "EFGrabURL.h"
 
 @interface EFVideoLecture : NSObject {
 	NSString * url;
@@ -19,6 +20,7 @@
 	WebView * webv;
 	NSString * webvUserAgent;
 	NSString * terminatingCondition;
+	NSString * currentURL;
 	BOOL processed;
 	id delegate;
 	
@@ -27,6 +29,8 @@
 	NSString * author;
 	NSString * email;
 	NSDate * creationDate;
+	
+	NSMutableData * receivedData;
 }
 
 @property (readonly) NSString * title;
@@ -36,6 +40,7 @@
 @property (readonly) NSDate * creationDate;
 
 @property (nonatomic, retain) NSString * url;
+@property (nonatomic, retain) NSString * currentURL;
 @property (nonatomic, retain) NSString * webvUserAgent;
 @property (nonatomic, retain) NSString * terminatingCondition;
 
@@ -48,4 +53,14 @@
 -(id)initWithURL:(NSString *)theUrl webViewUserAgent:(NSString *) useragent terminatingCondition:(NSString *) tc;
 -(void) process;
 -(void) refresh;
+
+-(void)gotMetadata:(id)sender;
 @end
+
+//notification objects
+NSString * EFVideoLectureParserEndLoadMetadata;
+NSString * EFVideoLectureParserDidLoadNotification;
+NSString * EFVideoLectureParserEndLoadNotification;
+NSString * EFVideoLectureParserDidCompleteNotification;
+NSString * EFVideoLectureParserDidFindVideoURLNotification;
+

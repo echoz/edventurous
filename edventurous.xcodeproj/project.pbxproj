@@ -14,6 +14,7 @@
 		3F267FE61062162E00A71E87 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3F267FD9106215F100A71E87 /* Sparkle.framework */; };
 		3F267FF5106217AE00A71E87 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 3F267FF4106217AE00A71E87 /* dsa_pub.pem */; };
 		3F3385DE1059C0AA00CF55B4 /* grabber.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F3385DD1059C0AA00CF55B4 /* grabber.png */; };
+		3F53603810666F960092AA07 /* EFGrabURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F53603710666F960092AA07 /* EFGrabURL.m */; };
 		3F95A69F1059EFE6003FFD19 /* SignatureEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F95A69E1059EFE6003FFD19 /* SignatureEngine.m */; };
 		3F95A6A21059EFEC003FFD19 /* Signature.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F95A6A11059EFEC003FFD19 /* Signature.m */; };
 		3F95A6A41059F01A003FFD19 /* SignatureEngine.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 3F95A6A31059F01A003FFD19 /* SignatureEngine.xcdatamodel */; };
@@ -61,6 +62,8 @@
 		3F267FD9106215F100A71E87 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
 		3F267FF4106217AE00A71E87 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 		3F3385DD1059C0AA00CF55B4 /* grabber.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grabber.png; sourceTree = "<group>"; };
+		3F53603610666F960092AA07 /* EFGrabURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EFGrabURL.h; sourceTree = "<group>"; };
+		3F53603710666F960092AA07 /* EFGrabURL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EFGrabURL.m; sourceTree = "<group>"; };
 		3F95A69D1059EFE6003FFD19 /* SignatureEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignatureEngine.h; sourceTree = "<group>"; };
 		3F95A69E1059EFE6003FFD19 /* SignatureEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignatureEngine.m; sourceTree = "<group>"; };
 		3F95A6A01059EFEC003FFD19 /* Signature.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Signature.h; sourceTree = "<group>"; };
@@ -218,6 +221,8 @@
 			children = (
 				3FB55B77106384090061A170 /* EFVideoLecture.h */,
 				3FB55B78106384090061A170 /* EFVideoLecture.m */,
+				3F53603610666F960092AA07 /* EFGrabURL.h */,
+				3F53603710666F960092AA07 /* EFGrabURL.m */,
 			);
 			path = EdventurousFramework;
 			sourceTree = "<group>";
@@ -319,6 +324,7 @@
 				3F95A6A41059F01A003FFD19 /* SignatureEngine.xcdatamodel in Sources */,
 				3F95A7A8105A815E003FFD19 /* MainInterfaceViewController.m in Sources */,
 				3FB55B79106384090061A170 /* EFVideoLecture.m in Sources */,
+				3F53603810666F960092AA07 /* EFGrabURL.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
