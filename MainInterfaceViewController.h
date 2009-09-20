@@ -7,15 +7,12 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import <WebKit/WebKit.h>
-#import "SignatureEngine.h"
 #import <QTKit/QTKit.h>
 #import "RegexKitLite.h"
+#import "EFVideoLecture.h"
 
 @interface MainInterfaceViewController : NSViewController {
-	WebView *webv;
 	BOOL gotPage;
-	SignatureEngine *sigEngine;
 	IBOutlet NSTextField *urlInput;
 	IBOutlet NSWindow *urlInputView;
 	IBOutlet NSTextField *titleLabel;
@@ -26,10 +23,10 @@
 	IBOutlet QTMovieView *movie;
 	IBOutlet NSButton *downloadButton;
 	NSSize originalSize;
+	EFVideoLecture *videolecture;
 }
 
-@property (nonatomic) WebView *webv;
-@property (nonatomic, retain) SignatureEngine * sigEngine;
+@property (nonatomic, retain) EFVideoLecture *videolecture;
 @property (nonatomic, retain) IBOutlet NSWindow *window;
 @property (nonatomic, assign) NSSize originalSize;
 
@@ -54,4 +51,6 @@
 -(IBAction) resizeOriginal:(id)sender;
 -(IBAction) downloadMovie:(id)sender;
 -(void)movieLoadStateChanged:(id)sender;
+
+-(void)processVideoLectureNotifications:(NSNotification *) notification;
 @end

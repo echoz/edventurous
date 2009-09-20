@@ -12,6 +12,15 @@
 #import "RegexKitLite.h"
 #import "EFGrabURL.h"
 
+@class EFVideoLecture;
+
+//notification objects
+NSString * const EFVideoLectureParserEndLoadMetadata;
+NSString * const EFVideoLectureParserDidLoadNotification;
+NSString * const EFVideoLectureParserEndLoadNotification;
+NSString * const EFVideoLectureParserDidCompleteNotification;
+NSString * const EFVideoLectureParserDidFindVideoURLNotification;
+
 @interface EFVideoLecture : NSObject {
 	NSString * url;
 	NSString * videoURL;
@@ -31,6 +40,7 @@
 	NSDate * creationDate;
 	
 	NSMutableData * receivedData;
+	EFGrabURL *metadata;
 }
 
 @property (readonly) NSString * title;
@@ -40,7 +50,7 @@
 @property (readonly) NSDate * creationDate;
 
 @property (nonatomic, retain) NSString * url;
-@property (nonatomic, retain) NSString * currentURL;
+@property (readonly) NSString * currentURL;
 @property (nonatomic, retain) NSString * webvUserAgent;
 @property (nonatomic, retain) NSString * terminatingCondition;
 
@@ -56,11 +66,4 @@
 
 -(void)gotMetadata:(id)sender;
 @end
-
-//notification objects
-NSString * EFVideoLectureParserEndLoadMetadata;
-NSString * EFVideoLectureParserDidLoadNotification;
-NSString * EFVideoLectureParserEndLoadNotification;
-NSString * EFVideoLectureParserDidCompleteNotification;
-NSString * EFVideoLectureParserDidFindVideoURLNotification;
 

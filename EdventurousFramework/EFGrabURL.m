@@ -11,6 +11,8 @@
 @implementation EFGrabURL
 @synthesize receivedData;
 
+NSString * const EFGrabURLFinishedNotification = @"EFGrabURLFinishedNotification";
+
 -(id)initWithURLString:(NSString *)theUrl {	
 	// create the request
 	NSURLRequest *theRequest=[NSURLRequest requestWithURL:[NSURL URLWithString:theUrl]
@@ -49,10 +51,6 @@
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
 {
-    // release the connection, and the data object
-    [connection release];
-    // receivedData is declared as a method instance elsewhere
-    [receivedData release];
 	
     // inform the user
     NSLog(@"Connection failed! Error - %@ %@",
@@ -65,10 +63,6 @@
     // do something with the data
     // receivedData is declared as a method instance elsewhere
     NSLog(@"Succeeded! Received %d bytes of data",[receivedData length]);
-	
-    // release the connection, and the data object
-    [connection release];
-    [receivedData release];
 	
 	[[NSNotificationCenter defaultCenter] postNotificationName:EFGrabURLFinishedNotification object:self];
 }
