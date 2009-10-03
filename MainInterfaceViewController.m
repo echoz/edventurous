@@ -80,6 +80,8 @@
 		[[NSNotificationCenter defaultCenter] removeObserver:self name:EFVideoLectureParserDidCompleteNotification object:[notification object]];
 		[[NSNotificationCenter defaultCenter] removeObserver:self name:EFVideoLectureParserDidFindVideoURLNotification object:[notification object]];
 		
+		NSLog(@"Video URL is: %@", [[notification object] videoURL]);
+		
 		if ([[(QTMovie *)[[notification object] movie] attributeForKey:QTMovieLoadStateAttribute] longValue] >= QTMovieLoadStateLoaded) {
 			originalSize = [self getMovieNaturalSize:movie.movie withOriginal:originalSize];
 			[self resizeMovieByx:0];
@@ -90,7 +92,7 @@
 -(void)movieLoadStateChanged:(id)sender {
 	NSLog(@"%li %li", [[[movie.movie movieAttributes] valueForKey:QTMovieLoadStateAttribute] longValue], QTMovieLoadStateLoaded);
 	
-	if ([[movie.movie attributeForKey:QTMovieLoadStateAttribute] longValue] >= QTMovieLoadStateLoaded) {
+	if (([[movie.movie attributeForKey:QTMovieLoadStateAttribute] longValue] >= QTMovieLoadStateLoaded) && ([[movie.movie attributeForKey:QTMovieLoadStateAttribute] longValue] < QTMovieLoadStateComplete)) {
 		NSLog(@"Setting original size");
 		originalSize = [self getMovieNaturalSize:movie.movie withOriginal:originalSize];
 		[self resizeMovieByx:0];

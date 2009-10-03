@@ -25,10 +25,11 @@
 		3F95AB07105AC1A9003FFD19 /* glyph-play.tif in Resources */ = {isa = PBXBuildFile; fileRef = 3F95AB06105AC1A9003FFD19 /* glyph-play.tif */; };
 		3F95AB11105AC26C003FFD19 /* glyph-playfull.tif in Resources */ = {isa = PBXBuildFile; fileRef = 3F95AB10105AC26C003FFD19 /* glyph-playfull.tif */; };
 		3F97F6EF10595F4600E1A6D4 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F97F6EE10595F4600E1A6D4 /* WebKit.framework */; };
+		3FAB823B10775B1A00CEB2A5 /* edventurous.icns in Resources */ = {isa = PBXBuildFile; fileRef = 3FAB823A10775B1A00CEB2A5 /* edventurous.icns */; };
 		3FB55B79106384090061A170 /* EFVideoLecture.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FB55B78106384090061A170 /* EFVideoLecture.m */; };
-		3FC49FF21059861C007D85B0 /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FC49FF11059861C007D85B0 /* RegexKitLite.m */; };
 		3FD12F5A1059986F006ACC75 /* QTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FD12F591059986F006ACC75 /* QTKit.framework */; };
 		3FD91DD71059875D00445FC7 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FD91DD61059875D00445FC7 /* libicucore.dylib */; };
+		3FEB2D5D1067E5ED002B0920 /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FEB2D5C1067E5ED002B0920 /* RegexKitLite.m */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
@@ -77,12 +78,13 @@
 		3F95AB06105AC1A9003FFD19 /* glyph-play.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "glyph-play.tif"; sourceTree = "<group>"; };
 		3F95AB10105AC26C003FFD19 /* glyph-playfull.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "glyph-playfull.tif"; sourceTree = "<group>"; };
 		3F97F6EE10595F4600E1A6D4 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = /System/Library/Frameworks/WebKit.framework; sourceTree = "<absolute>"; };
+		3FAB823A10775B1A00CEB2A5 /* edventurous.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = edventurous.icns; sourceTree = "<group>"; };
 		3FB55B77106384090061A170 /* EFVideoLecture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EFVideoLecture.h; sourceTree = "<group>"; };
 		3FB55B78106384090061A170 /* EFVideoLecture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EFVideoLecture.m; sourceTree = "<group>"; };
-		3FC49FF01059861C007D85B0 /* RegexKitLite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegexKitLite.h; sourceTree = "<group>"; };
-		3FC49FF11059861C007D85B0 /* RegexKitLite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegexKitLite.m; sourceTree = "<group>"; };
 		3FD12F591059986F006ACC75 /* QTKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QTKit.framework; path = /System/Library/Frameworks/QTKit.framework; sourceTree = "<absolute>"; };
 		3FD91DD61059875D00445FC7 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = /usr/lib/libicucore.dylib; sourceTree = "<absolute>"; };
+		3FEB2D5B1067E5EC002B0920 /* RegexKitLite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegexKitLite.h; sourceTree = "<group>"; };
+		3FEB2D5C1067E5ED002B0920 /* RegexKitLite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegexKitLite.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* edventurous-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "edventurous-Info.plist"; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* edventurous.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = edventurous.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -170,6 +172,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				3FAB823A10775B1A00CEB2A5 /* edventurous.icns */,
 				3F267FF4106217AE00A71E87 /* dsa_pub.pem */,
 				3F267FC610620F8300A71E87 /* version.xcconfig */,
 				8D1107310486CEB800E47090 /* edventurous-Info.plist */,
@@ -230,8 +233,8 @@
 		3FC49FEE105985F9007D85B0 /* RegexKitLite */ = {
 			isa = PBXGroup;
 			children = (
-				3FC49FF01059861C007D85B0 /* RegexKitLite.h */,
-				3FC49FF11059861C007D85B0 /* RegexKitLite.m */,
+				3FEB2D5B1067E5EC002B0920 /* RegexKitLite.h */,
+				3FEB2D5C1067E5ED002B0920 /* RegexKitLite.m */,
 			);
 			path = RegexKitLite;
 			sourceTree = "<group>";
@@ -290,6 +293,7 @@
 				3F95AB11105AC26C003FFD19 /* glyph-playfull.tif in Resources */,
 				3F267FC710620F8300A71E87 /* version.xcconfig in Resources */,
 				3F267FF5106217AE00A71E87 /* dsa_pub.pem in Resources */,
+				3FAB823B10775B1A00CEB2A5 /* edventurous.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,13 +322,13 @@
 			files = (
 				8D11072D0486CEB800E47090 /* main.m in Sources */,
 				256AC3DA0F4B6AC300CF3369 /* edventurousAppDelegate.m in Sources */,
-				3FC49FF21059861C007D85B0 /* RegexKitLite.m in Sources */,
 				3F95A69F1059EFE6003FFD19 /* SignatureEngine.m in Sources */,
 				3F95A6A21059EFEC003FFD19 /* Signature.m in Sources */,
 				3F95A6A41059F01A003FFD19 /* SignatureEngine.xcdatamodel in Sources */,
 				3F95A7A8105A815E003FFD19 /* MainInterfaceViewController.m in Sources */,
 				3FB55B79106384090061A170 /* EFVideoLecture.m in Sources */,
 				3F53603810666F960092AA07 /* EFGrabURL.m in Sources */,
+				3FEB2D5D1067E5ED002B0920 /* RegexKitLite.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
