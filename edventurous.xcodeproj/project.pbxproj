@@ -11,10 +11,11 @@
 		256AC3DA0F4B6AC300CF3369 /* edventurousAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 256AC3D90F4B6AC300CF3369 /* edventurousAppDelegate.m */; };
 		3F267FC710620F8300A71E87 /* version.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 3F267FC610620F8300A71E87 /* version.xcconfig */; };
 		3F267FDA106215F100A71E87 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F267FD9106215F100A71E87 /* Sparkle.framework */; };
-		3F267FE61062162E00A71E87 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3F267FD9106215F100A71E87 /* Sparkle.framework */; };
+		3F267FE61062162E00A71E87 /* Sparkle.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 3F267FD9106215F100A71E87 /* Sparkle.framework */; };
 		3F267FF5106217AE00A71E87 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 3F267FF4106217AE00A71E87 /* dsa_pub.pem */; };
 		3F3385DE1059C0AA00CF55B4 /* grabber.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F3385DD1059C0AA00CF55B4 /* grabber.png */; };
-		3F53603810666F960092AA07 /* EFGrabURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F53603710666F960092AA07 /* EFGrabURL.m */; };
+		3F6C1FDA107CA97800C80CEA /* Edventurous.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F6C1FCC107CA93A00C80CEA /* Edventurous.framework */; };
+		3F6C1FDB107CA97B00C80CEA /* Edventurous.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 3F6C1FCC107CA93A00C80CEA /* Edventurous.framework */; };
 		3F95A69F1059EFE6003FFD19 /* SignatureEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F95A69E1059EFE6003FFD19 /* SignatureEngine.m */; };
 		3F95A6A21059EFEC003FFD19 /* Signature.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F95A6A11059EFEC003FFD19 /* Signature.m */; };
 		3F95A6A41059F01A003FFD19 /* SignatureEngine.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 3F95A6A31059F01A003FFD19 /* SignatureEngine.xcdatamodel */; };
@@ -26,7 +27,6 @@
 		3F95AB11105AC26C003FFD19 /* glyph-playfull.tif in Resources */ = {isa = PBXBuildFile; fileRef = 3F95AB10105AC26C003FFD19 /* glyph-playfull.tif */; };
 		3F97F6EF10595F4600E1A6D4 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F97F6EE10595F4600E1A6D4 /* WebKit.framework */; };
 		3FAB823B10775B1A00CEB2A5 /* edventurous.icns in Resources */ = {isa = PBXBuildFile; fileRef = 3FAB823A10775B1A00CEB2A5 /* edventurous.icns */; };
-		3FB55B79106384090061A170 /* EFVideoLecture.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FB55B78106384090061A170 /* EFVideoLecture.m */; };
 		3FD12F5A1059986F006ACC75 /* QTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FD12F591059986F006ACC75 /* QTKit.framework */; };
 		3FD91DD71059875D00445FC7 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FD91DD61059875D00445FC7 /* libicucore.dylib */; };
 		3FEB2D5D1067E5ED002B0920 /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FEB2D5C1067E5ED002B0920 /* RegexKitLite.m */; };
@@ -35,15 +35,34 @@
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		3F6C1FCB107CA93A00C80CEA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3F6C1FC7107CA93A00C80CEA /* Edventurous.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8DC2EF5B0486A6940098B216 /* Edventurous.framework */;
+			remoteInfo = Edventurous;
+		};
+		3F6C1FD8107CA96B00C80CEA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3F6C1FC7107CA93A00C80CEA /* Edventurous.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8DC2EF4F0486A6940098B216 /* Edventurous */;
+			remoteInfo = Edventurous;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXCopyFilesBuildPhase section */
-		3F267FE51062160000A71E87 /* CopyFiles */ = {
+		3F267FE51062160000A71E87 /* Copy Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				3F267FE61062162E00A71E87 /* Sparkle.framework in CopyFiles */,
+				3F6C1FDB107CA97B00C80CEA /* Edventurous.framework in Copy Frameworks */,
+				3F267FE61062162E00A71E87 /* Sparkle.framework in Copy Frameworks */,
 			);
+			name = "Copy Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -63,8 +82,7 @@
 		3F267FD9106215F100A71E87 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
 		3F267FF4106217AE00A71E87 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 		3F3385DD1059C0AA00CF55B4 /* grabber.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grabber.png; sourceTree = "<group>"; };
-		3F53603610666F960092AA07 /* EFGrabURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EFGrabURL.h; sourceTree = "<group>"; };
-		3F53603710666F960092AA07 /* EFGrabURL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EFGrabURL.m; sourceTree = "<group>"; };
+		3F6C1FC7107CA93A00C80CEA /* Edventurous.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Edventurous.xcodeproj; path = ../Frameworks/Edventurous/Edventurous.xcodeproj; sourceTree = SOURCE_ROOT; };
 		3F95A69D1059EFE6003FFD19 /* SignatureEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignatureEngine.h; sourceTree = "<group>"; };
 		3F95A69E1059EFE6003FFD19 /* SignatureEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignatureEngine.m; sourceTree = "<group>"; };
 		3F95A6A01059EFEC003FFD19 /* Signature.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Signature.h; sourceTree = "<group>"; };
@@ -79,8 +97,6 @@
 		3F95AB10105AC26C003FFD19 /* glyph-playfull.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "glyph-playfull.tif"; sourceTree = "<group>"; };
 		3F97F6EE10595F4600E1A6D4 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = /System/Library/Frameworks/WebKit.framework; sourceTree = "<absolute>"; };
 		3FAB823A10775B1A00CEB2A5 /* edventurous.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = edventurous.icns; sourceTree = "<group>"; };
-		3FB55B77106384090061A170 /* EFVideoLecture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EFVideoLecture.h; sourceTree = "<group>"; };
-		3FB55B78106384090061A170 /* EFVideoLecture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EFVideoLecture.m; sourceTree = "<group>"; };
 		3FD12F591059986F006ACC75 /* QTKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QTKit.framework; path = /System/Library/Frameworks/QTKit.framework; sourceTree = "<absolute>"; };
 		3FD91DD61059875D00445FC7 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = /usr/lib/libicucore.dylib; sourceTree = "<absolute>"; };
 		3FEB2D5B1067E5EC002B0920 /* RegexKitLite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegexKitLite.h; sourceTree = "<group>"; };
@@ -94,6 +110,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F6C1FDA107CA97800C80CEA /* Edventurous.framework in Frameworks */,
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
 				3F97F6EF10595F4600E1A6D4 /* WebKit.framework in Frameworks */,
 				3FD91DD71059875D00445FC7 /* libicucore.dylib in Frameworks */,
@@ -120,6 +137,9 @@
 		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3F97F6EE10595F4600E1A6D4 /* WebKit.framework */,
+				3FD91DD61059875D00445FC7 /* libicucore.dylib */,
+				3FD12F591059986F006ACC75 /* QTKit.framework */,
 				3F267FD9106215F100A71E87 /* Sparkle.framework */,
 				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
 			);
@@ -147,7 +167,7 @@
 		29B97314FDCFA39411CA2CEA /* edventurous */ = {
 			isa = PBXGroup;
 			children = (
-				3FB55B7510637EE90061A170 /* EdventurousFramework */,
+				3F6C1FC7107CA93A00C80CEA /* Edventurous.xcodeproj */,
 				3F95A69C1059EFA3003FFD19 /* SignatureEngine */,
 				3F3385DC1059C09600CF55B4 /* Images */,
 				3FC49FEE105985F9007D85B0 /* RegexKitLite */,
@@ -188,9 +208,6 @@
 			children = (
 				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
 				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
-				3F97F6EE10595F4600E1A6D4 /* WebKit.framework */,
-				3FD91DD61059875D00445FC7 /* libicucore.dylib */,
-				3FD12F591059986F006ACC75 /* QTKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -206,6 +223,14 @@
 			path = Images;
 			sourceTree = "<group>";
 		};
+		3F6C1FC8107CA93A00C80CEA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3F6C1FCC107CA93A00C80CEA /* Edventurous.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		3F95A69C1059EFA3003FFD19 /* SignatureEngine */ = {
 			isa = PBXGroup;
 			children = (
@@ -217,17 +242,6 @@
 				3F95A6A31059F01A003FFD19 /* SignatureEngine.xcdatamodel */,
 			);
 			path = SignatureEngine;
-			sourceTree = "<group>";
-		};
-		3FB55B7510637EE90061A170 /* EdventurousFramework */ = {
-			isa = PBXGroup;
-			children = (
-				3FB55B77106384090061A170 /* EFVideoLecture.h */,
-				3FB55B78106384090061A170 /* EFVideoLecture.m */,
-				3F53603610666F960092AA07 /* EFGrabURL.h */,
-				3F53603710666F960092AA07 /* EFGrabURL.m */,
-			);
-			path = EdventurousFramework;
 			sourceTree = "<group>";
 		};
 		3FC49FEE105985F9007D85B0 /* RegexKitLite */ = {
@@ -250,11 +264,12 @@
 				8D11072C0486CEB800E47090 /* Sources */,
 				8D11072E0486CEB800E47090 /* Frameworks */,
 				3F267FAD10620DD200A71E87 /* ShellScript */,
-				3F267FE51062160000A71E87 /* CopyFiles */,
+				3F267FE51062160000A71E87 /* Copy Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				3F6C1FD9107CA96B00C80CEA /* PBXTargetDependency */,
 			);
 			name = edventurous;
 			productInstallPath = "$(HOME)/Applications";
@@ -272,12 +287,28 @@
 			hasScannedForEncodings = 1;
 			mainGroup = 29B97314FDCFA39411CA2CEA /* edventurous */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 3F6C1FC8107CA93A00C80CEA /* Products */;
+					ProjectRef = 3F6C1FC7107CA93A00C80CEA /* Edventurous.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				8D1107260486CEB800E47090 /* edventurous */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		3F6C1FCC107CA93A00C80CEA /* Edventurous.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Edventurous.framework;
+			remoteRef = 3F6C1FCB107CA93A00C80CEA /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		8D1107290486CEB800E47090 /* Resources */ = {
@@ -326,13 +357,19 @@
 				3F95A6A21059EFEC003FFD19 /* Signature.m in Sources */,
 				3F95A6A41059F01A003FFD19 /* SignatureEngine.xcdatamodel in Sources */,
 				3F95A7A8105A815E003FFD19 /* MainInterfaceViewController.m in Sources */,
-				3FB55B79106384090061A170 /* EFVideoLecture.m in Sources */,
-				3F53603810666F960092AA07 /* EFGrabURL.m in Sources */,
 				3FEB2D5D1067E5ED002B0920 /* RegexKitLite.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3F6C1FD9107CA96B00C80CEA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Edventurous;
+			targetProxy = 3F6C1FD8107CA96B00C80CEA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		089C165CFE840E0CC02AAC07 /* InfoPlist.strings */ = {
@@ -362,11 +399,13 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/../Frameworks/Edventurous/build/Debug\"",
+					"\"$(SRCROOT)/../Frameworks/Edventurous/build/Release\"",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_MODEL_TUNING = G5;
-				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_OPTIMIZATION_LEVEL = s;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = edventurous_Prefix.pch;
 				INFOPLIST_FILE = "edventurous-Info.plist";
@@ -383,13 +422,17 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/../Frameworks/Edventurous/build/Debug\"",
+					"\"$(SRCROOT)/../Frameworks/Edventurous/build/Release\"",
 				);
 				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = s;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = edventurous_Prefix.pch;
 				INFOPLIST_FILE = "edventurous-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
 				PRODUCT_NAME = edventurous;
+				RUN_CLANG_STATIC_ANALYZER = NO;
 			};
 			name = Release;
 		};
@@ -404,6 +447,7 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "/Users/jeremy/Development/Frameworks/Edventurous/build/Release/**";
 				ONLY_ACTIVE_ARCH = NO;
 				PREBINDING = NO;
 				RUN_CLANG_STATIC_ANALYZER = YES;
@@ -415,13 +459,14 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3F267FC610620F8300A71E87 /* version.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_OBJC_GC = required;
 				GCC_OPTIMIZATION_LEVEL = s;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "/Users/jeremy/Development/Frameworks/Edventurous/build/Release/**";
 				ONLY_ACTIVE_ARCH = NO;
 				PREBINDING = NO;
 				RUN_CLANG_STATIC_ANALYZER = YES;

@@ -8,8 +8,8 @@
 
 #import <Cocoa/Cocoa.h>
 #import <QTKit/QTKit.h>
+#import <Edventurous/Edventurous.h>
 #import "RegexKitLite.h"
-#import "EFVideoLecture.h"
 
 @interface MainInterfaceViewController : NSViewController {
 	BOOL gotPage;
