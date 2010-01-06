@@ -34,6 +34,7 @@
 		}
 		
 		if ([[urlInput stringValue] hasPrefix:@"http://presentur.ntu.edu.sg"]) {
+			videolecture = nil;
 			videolecture = [[EFVideoLecture alloc] initWithURL:[urlInput stringValue] webViewUserAgent:WEBVIEW_USERAGENT terminatingCondition:CLASSID_TOHUNTFOR];
 			[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(processVideoLectureNotifications:) name:EFVideoLectureParserEndLoadMetadata object:videolecture];
 			[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(processVideoLectureNotifications:) name:EFVideoLectureParserDidLoadNotification object:videolecture];

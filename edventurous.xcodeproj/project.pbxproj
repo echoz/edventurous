@@ -16,6 +16,8 @@
 		3F3385DE1059C0AA00CF55B4 /* grabber.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F3385DD1059C0AA00CF55B4 /* grabber.png */; };
 		3F6C1FDA107CA97800C80CEA /* Edventurous.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F6C1FCC107CA93A00C80CEA /* Edventurous.framework */; };
 		3F6C1FDB107CA97B00C80CEA /* Edventurous.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 3F6C1FCC107CA93A00C80CEA /* Edventurous.framework */; };
+		3F90ADA9107D1D6600F03BCB /* BWToolkitFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F90ADA8107D1D6600F03BCB /* BWToolkitFramework.framework */; };
+		3F90ADDD107D1D8000F03BCB /* BWToolkitFramework.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 3F90ADA8107D1D6600F03BCB /* BWToolkitFramework.framework */; };
 		3F95A69F1059EFE6003FFD19 /* SignatureEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F95A69E1059EFE6003FFD19 /* SignatureEngine.m */; };
 		3F95A6A21059EFEC003FFD19 /* Signature.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F95A6A11059EFEC003FFD19 /* Signature.m */; };
 		3F95A6A41059F01A003FFD19 /* SignatureEngine.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 3F95A6A31059F01A003FFD19 /* SignatureEngine.xcdatamodel */; };
@@ -40,14 +42,14 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = 3F6C1FC7107CA93A00C80CEA /* Edventurous.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 8DC2EF5B0486A6940098B216 /* Edventurous.framework */;
+			remoteGlobalIDString = 8DC2EF5B0486A6940098B216;
 			remoteInfo = Edventurous;
 		};
 		3F6C1FD8107CA96B00C80CEA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 3F6C1FC7107CA93A00C80CEA /* Edventurous.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 8DC2EF4F0486A6940098B216 /* Edventurous */;
+			remoteGlobalIDString = 8DC2EF4F0486A6940098B216;
 			remoteInfo = Edventurous;
 		};
 /* End PBXContainerItemProxy section */
@@ -60,6 +62,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				3F6C1FDB107CA97B00C80CEA /* Edventurous.framework in Copy Frameworks */,
+				3F90ADDD107D1D8000F03BCB /* BWToolkitFramework.framework in Copy Frameworks */,
 				3F267FE61062162E00A71E87 /* Sparkle.framework in Copy Frameworks */,
 			);
 			name = "Copy Frameworks";
@@ -83,6 +86,7 @@
 		3F267FF4106217AE00A71E87 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 		3F3385DD1059C0AA00CF55B4 /* grabber.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grabber.png; sourceTree = "<group>"; };
 		3F6C1FC7107CA93A00C80CEA /* Edventurous.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Edventurous.xcodeproj; path = ../Frameworks/Edventurous/Edventurous.xcodeproj; sourceTree = SOURCE_ROOT; };
+		3F90ADA8107D1D6600F03BCB /* BWToolkitFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BWToolkitFramework.framework; path = /Users/jeremy/Development/BWToolkit/BWToolkitFramework.framework; sourceTree = "<absolute>"; };
 		3F95A69D1059EFE6003FFD19 /* SignatureEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignatureEngine.h; sourceTree = "<group>"; };
 		3F95A69E1059EFE6003FFD19 /* SignatureEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignatureEngine.m; sourceTree = "<group>"; };
 		3F95A6A01059EFEC003FFD19 /* Signature.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Signature.h; sourceTree = "<group>"; };
@@ -117,6 +121,7 @@
 				3FD12F5A1059986F006ACC75 /* QTKit.framework in Frameworks */,
 				3F95A71B1059F58B003FFD19 /* CoreData.framework in Frameworks */,
 				3F267FDA106215F100A71E87 /* Sparkle.framework in Frameworks */,
+				3F90ADA9107D1D6600F03BCB /* BWToolkitFramework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,6 +142,7 @@
 		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3F90ADA8107D1D6600F03BCB /* BWToolkitFramework.framework */,
 				3F97F6EE10595F4600E1A6D4 /* WebKit.framework */,
 				3FD91DD61059875D00445FC7 /* libicucore.dylib */,
 				3FD12F591059986F006ACC75 /* QTKit.framework */,
@@ -401,6 +407,7 @@
 					"\"$(SRCROOT)\"",
 					"\"$(SRCROOT)/../Frameworks/Edventurous/build/Debug\"",
 					"\"$(SRCROOT)/../Frameworks/Edventurous/build/Release\"",
+					"\"$(SRCROOT)/../BWToolkit\"",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
@@ -424,6 +431,7 @@
 					"\"$(SRCROOT)\"",
 					"\"$(SRCROOT)/../Frameworks/Edventurous/build/Debug\"",
 					"\"$(SRCROOT)/../Frameworks/Edventurous/build/Release\"",
+					"\"$(SRCROOT)/../BWToolkit\"",
 				);
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = s;
